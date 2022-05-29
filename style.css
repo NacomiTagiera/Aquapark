@@ -1,0 +1,753 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
+
+html
+{
+    font-size: 62.5%; /* dzięki temu 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+.section-heading 
+{
+    font-size: 12rem;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5rem;
+    text-shadow: .3rem .3rem .3rem #000;
+}
+
+/* Navbar */
+
+.navbar
+{
+    width: 100%;
+    height: 14rem;
+    background-color: #000;
+    position: fixed;
+    top: -14rem;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: .2rem .2rem .2rem #000;
+    transition: top .4s;
+}
+
+.navbar.change
+{
+    top: 0;
+    transition: top .4s .2s;
+}
+
+.navbar-link
+{
+    color: #aaa;
+    margin: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: color .3s, opacity .2s;
+}
+
+.change .navbar-link 
+{
+    opacity: 1;    
+}
+
+.change .navbar-link:nth-child(1)
+{
+    transition: opacity .4s .5s, color .3s;
+}
+
+.change .navbar-link:nth-child(2)
+{
+    transition: opacity .4s .6s, color .3s;
+}
+
+.change .navbar-link:nth-child(3)
+{
+    transition: opacity .4s .7s, color .3s;
+}
+
+.change .navbar-link:nth-child(4)
+{
+    transition: opacity .4s .8s, color .3s;
+}
+
+.change .navbar-link:nth-child(5)
+{
+    transition: opacity .4s .9s, color .3s;
+}
+
+.navbar-link:hover
+{
+    color: #fff;
+    cursor: pointer;
+}
+
+.navbar-link i
+{
+    font-size: 7rem;
+}
+
+.navbar-link span
+{
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: .5rem;
+    margin-top: .5rem;
+}
+
+.menu
+{
+    width: 4rem;
+    height: 6rem;
+    background-color: #000;
+    position: fixed;
+    top: 1rem;
+    left: 5rem;
+    border-radius: 30rem 30rem 15rem 15rem;
+    box-shadow: .1rem .1rem .1rem #000, -.1rem -.1rem .1rem #000;
+    cursor: pointer;
+    z-index: 100;
+    transition: top .4s .2s;
+}
+
+.menu.change
+{
+    top: 15rem;
+    transition: top .4s;
+}
+
+.menu::before
+{
+    content: '';
+    width: .3rem;
+    height: 15rem;
+    background-color: #000;
+    position: absolute;
+    top: -15rem;
+    left: calc(50% - .15rem);
+    box-shadow: .1rem 0 .1rem #000;
+}
+
+/* Koniec Navbara */
+
+/* section 1 */
+
+.section-1 
+{
+    width: 100%;
+    height: 100vh;
+    background: rgb(0, 212, 255);
+    background: radial-gradient(circle, rgba(0,212,255,1) 20%, rgba(0,166,187,1) 83%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+  
+.section-1-icons i 
+{
+    font-size: 35rem;
+    color: #a79a2d;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+    text-shadow: .2rem .2rem .2rem #000;
+    transition: transform .3s;
+}
+  
+.section-1-icons i.change 
+{
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform .3s .3s;
+}
+
+/* Koniec section 1*/
+
+/* Section 2 */
+
+.section-2
+{
+    background: rgb(0,166,187);
+    background: radial-gradient(circle, rgba(0,166,187,1) 20%, rgba(0,212,255,1) 83%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10rem 0;
+}
+
+.cards-container
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card
+{
+    background-color: #a79a2d;
+    width: 30rem;    
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 1rem 1rem 1rem #000;
+    position: relative;
+    transform: rotateY(20deg) skewX(-2deg);
+    transition: all .3s ease-in-out;
+    top: -4rem;
+}
+
+.card:hover
+{
+    transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+    box-shadow: 2rem 2rem 2rem #000;
+}
+
+.card::before
+{
+    content: '';
+    height: 100%;
+    width: 1rem;
+    background-color: #817824;
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    transform: skewY(45deg);
+    transform-origin: right;
+    box-shadow: -.1rem -.1rem .1rem #000;
+}
+
+.card::after
+{
+    content: '';
+    height: 1rem;
+    width: 100%;
+    background-color: #8f8317;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    transform: skewX(45deg);
+    transform-origin: bottom;
+    box-shadow: -.1rem -.1rem .1rem #000;
+}
+
+.card-name
+{
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: #111;
+    margin: 2rem 0;
+    text-shadow: .15rem .15rem .15rem #000;
+}
+
+/* Koniec Section 2 */
+
+/* Section 3 */
+
+.section-3
+{
+    background: rgb(0, 212, 255);
+    background: radial-gradient(circle, rgba(0,212,255,1) 20%, rgba(0,166,187,1) 83%);
+    padding: 5rem 0;
+}
+
+.gallery
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+}
+
+.gallery-link
+{
+    position: relative;
+    margin: 4rem 1rem;
+}
+
+.gallery-link::before
+{
+    content: '';
+    position: absolute;
+    top: 2vw;
+    left: 80%;
+    width: .2rem;
+    height: 0;
+    background-color: white;
+    z-index: 10;
+    transition: height .5s linear;
+}
+
+.gallery-link:hover::before
+{
+    height: 80%;
+}
+
+.gallery-link:hover::after
+{
+    width: 90%;
+}
+
+.gallery-link::after
+{
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 2rem;
+    width: 0;
+    height: .2rem;
+    background-color: white;
+    transition: width .5s linear;
+}
+
+.gallery-img
+{
+    width: 24vw;
+    height: 15vw;
+    object-fit: cover;
+    box-shadow: .3rem .3rem .1rem red, .5rem .5rem .1rem orangered, .7rem .7rem .1rem orange, .9rem .9rem .1rem yellow;
+    transition: all .5s;
+}
+
+.gallery-link:hover .gallery-img
+{
+    box-shadow: 1rem 1rem .1rem red, 2rem 2rem .1rem orangered, 3rem 3rem .1rem orange, 4rem 4rem .1rem yellow;
+    transition: all .5s;
+    filter: blur(.5rem);
+    opacity: .5;
+    transform: scale(1.1);
+}
+
+.gallery-name
+{
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: white;
+    width: 0;
+    overflow: hidden;
+    transition: width .3s;
+}
+
+.gallery-link:hover .gallery-name
+{
+    width: 100%;
+    transition: width 1.5s 0.5s;
+}
+
+.gallery-description
+{
+    position: absolute;
+    top: 34%;
+    left: 2rem;
+    width: 70%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s;
+}
+
+.gallery-link:hover .gallery-description
+{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s 1s;
+}
+
+/* Koniec Section 3 */
+
+/* Section 4 */
+
+.section-4
+{
+    background: rgb(0,166,187);
+    background: radial-gradient(circle, rgba(0,166,187,1) 20%, rgba(0,212,255,1) 83%);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10rem 0;
+}
+
+#faq-heading
+{
+    margin-bottom: 2rem;
+}
+
+.faq 
+{
+    background-color: lightblue;
+    border: .1rem solid #9fa4a8;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: .3s ease;
+    width: 50%;
+}
+  
+.faq.active 
+{
+    background-color: lightblue;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .1), 0 3px 6px rgba(0, 0, 0, .1);
+}
+  
+.faq.active::before,
+.faq.active::after 
+{
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    color: #2ecc71;
+    font-size: 7rem;
+    position: absolute;
+    opacity: 0.2;
+    top: 2rem;
+    left: 2rem;
+    z-index: 0;
+}
+  
+.faq.active::before 
+{
+    color: #3498db;
+    top: -1rem;
+    left: -3rem;
+    transform: rotateY(180deg);
+}
+  
+.faq-title 
+{
+    margin: 0 3.5rem 0 0;
+    font-size: 3rem;
+    font-weight: 700;
+}
+  
+.faq-text 
+{
+    display: none;
+    margin-top: 3rem;
+    font-size: 2rem;
+}
+  
+.faq.active .faq-text 
+{
+    display: block;
+}
+  
+.faq-toggle 
+{
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    height: 3rem;
+    width: 3rem;
+}
+
+.faq-toggle .fa-times 
+{
+    display: none;
+}
+  
+.faq.active .faq-toggle .fa-times 
+{
+    color: #fff;
+    display: block;
+}
+  
+.faq.active .faq-toggle .fa-chevron-down 
+{
+    display: none;
+}
+  
+.faq.active .faq-toggle 
+{
+    background-color: #9fa4a8;
+}  
+
+/* Koniec Section 4 */
+
+/* Section 5 */
+
+.section-5
+{
+    width: 100%;
+    height: 30vh;
+    background-color: #222;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 3rem 0;
+    position: relative;
+}
+
+.section-5-text
+{
+    text-transform: uppercase;
+}
+
+.section-5-heading
+{
+    font-size: 4rem;
+    font-weight: 900;
+    color: #a79a2d;
+}
+
+.section-5-paragraph
+{
+    color: #888;
+    font-size: 1.5rem;
+}
+
+.signup-form
+{
+    display: flex;
+    align-items: center;
+}
+
+.signup-form-input
+{
+    width: 35rem;
+    height: 5rem;
+    padding: 1rem;
+    border: .2rem solid #a79a2d;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    color: #a79a2d;
+}
+
+.signup-form-input::placeholder
+{
+    color: #a79a2d;
+}
+
+.signup-form-btn
+{
+    position: relative;
+    left: -4.5rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #333;
+    color: #a79a2d;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.copyright
+{
+    position: absolute;
+    bottom: 3rem;
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: #eee;
+    letter-spacing: .1rem;
+    border-top: .1rem solid #888;
+    padding-top: 6rem;
+    width: 100%;
+    text-align: center;
+}
+
+/*  Koniec Section 5 */
+
+/* RWD */
+
+@media (max-width: 1400px)
+{
+    html 
+    {
+        font-size: 50%;
+    }
+
+    .section-2
+    {
+        height: auto;
+        padding: 10rem 0 12rem 0;
+    }
+
+    .cards-container
+    {
+        margin-top: 10rem;
+    }
+
+    .gallery-link
+    {
+        width: 40rem;
+        height: 25rem;
+        margin: 5rem;
+    }
+
+    .gallery-img
+    {
+        width: 100%;
+        height: 100%;
+    }
+
+    .faq
+    {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1000px)
+{  
+    .section-heading
+    {
+        font-size: 9rem;
+        margin: 0 5rem;
+    }
+
+    .section-1-icons i
+    {
+        font-size: 25rem;
+    }
+
+    .cards-container
+    {
+        flex-wrap: wrap;
+    }
+
+    .card 
+    {
+        margin: 5rem;
+    }
+
+    .section-5
+    {
+        height: 30rem;        
+    }
+
+    .faq
+    {
+        width: 70%;
+    }
+}
+
+@media (max-width: 900px)
+{
+    .navbar-link
+    {
+        margin: 2rem;
+    }
+
+    .navbar-link i
+    {
+        font-size: 4rem;
+    }
+
+    .navbar-link span 
+    {
+        font-size: 2rem;
+    }
+
+    .faq
+    {
+        width: 80%;
+    }
+}
+
+@media (max-width: 700px)
+{
+    .section-heading
+    {
+        font-size: 7rem;
+        margin: 0 10rem;
+    }
+
+    .section-1-icons
+    {
+        font-size: 20rem;
+    }
+
+    .menu 
+    {
+        left: 2rem;
+    }    
+
+    .section-5
+    {
+        height: 40rem;    
+        align-items: center;     
+    }
+
+    .section-5-text
+    {
+        margin-bottom: 8rem;
+    }
+
+    .faq
+    {
+        width: 87%;        
+    }  
+}
+
+@media (max-width: 550px)
+{
+    html 
+    {
+        font-size: 40%;
+    }
+
+    .navbar-link
+    {
+        margin: 0 .7rem;
+    }
+
+    .section-4
+    {
+        min-height: 75%;
+    }
+
+    .faq
+    {
+        width: 95%;
+        margin: 4rem 0;
+    }    
+
+    #faq-heading
+    {
+        margin-bottom: 4rem;
+    }
+}
+
+/* Koniec RWD */
