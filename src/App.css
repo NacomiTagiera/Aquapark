@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+  /* dzięki temu 1rem = 10px */
+  scroll-behavior: smooth;
+}
+
+.App {
+  overflow-x: hidden;
+}
+
+/* RWD */
+
+@media (max-width: 1400px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 40%;
+  }
+}
