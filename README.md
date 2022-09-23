@@ -1,1 +1,11 @@
-Responsywna strona wymyślonego przeze mnie aquaparku, którą napisałem z wykorzystaniem: Typescript, React.js, Material UI oraz CSS. Tworząc ten projekt skupiłem się głównie na poznawaniu React'a oraz tworzeniu ciekawych efektów w CSS'ie.
+# Aquapark
+
+Responsive website of an imaginary aquapark with multiple CSS hover animations, MUI components and wave animation.
+Technologies and libraries that I used in this project:
+
+- TypeScript,
+- React.js,
+- Material UI,
+- CSS,
+- React Scroll,
+- React Wavify,
