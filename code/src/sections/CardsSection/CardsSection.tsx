@@ -26,7 +26,7 @@ const cardsData: Props[] = [
 
 export default function CardsSection() {
   return (
-    <section className={styles.cardsSection}>
+    <section className={styles.cardsSection} id="Oferta">
       <SectionHeading headerText="Oferta" />
       <div className={styles.cardsContainer}>
         {cardsData.map((cardData) => (

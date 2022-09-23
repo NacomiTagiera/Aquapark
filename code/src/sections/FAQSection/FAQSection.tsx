@@ -25,7 +25,7 @@ const faqsData: Props[] = [
 
 export default function FAQSection() {
   return (
-    <section className={styles.faqSection}>
+    <section className={styles.faqSection} id="FAQ">
       <SectionHeading headerText="FAQ" />
 
       {faqsData.map((faqData) => (

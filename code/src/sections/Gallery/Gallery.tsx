@@ -52,7 +52,7 @@ const imagesData: Props[] = [
 
 export default function Gallery() {
   return (
-    <section className={styles.gallerySection}>
+    <section className={styles.gallerySection} id="Galeria">
       <SectionHeading headerText="Galeria" />
 
       <div className={styles.gallery}>
