@@ -4,7 +4,6 @@ import { Link } from "react-scroll";
 import {
   AppBar,
   Box,
-  Button,
   Divider,
   Drawer,
   IconButton,
@@ -12,11 +11,13 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  ListItemIcon,
   Toolbar,
   Typography,
 } from "@mui/material";
 import {
   Call,
+  ChevronLeft,
   Help,
   Home,
   HotTub,
@@ -24,7 +25,16 @@ import {
   PhotoCamera,
 } from "@mui/icons-material";
 
-const drawerWidth = 240;
+const textStyle = {
+  color: "#fff",
+  fontSize: "3.5rem",
+  fontWeight: "bold",
+};
+
+const iconStyle = {
+  color: "#fff",
+  fontSize: "3.5rem",
+};
 
 interface NavItem {
   icon: ReactNode;
@@ -33,23 +43,23 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   {
-    icon: <Home />,
+    icon: <Home sx={iconStyle} />,
     text: "Home",
   },
   {
-    icon: <HotTub />,
+    icon: <HotTub sx={iconStyle} />,
     text: "Oferta",
   },
   {
-    icon: <PhotoCamera />,
+    icon: <PhotoCamera sx={iconStyle} />,
     text: "Galeria",
   },
   {
-    icon: <Help />,
+    icon: <Help sx={iconStyle} />,
     text: "FAQ",
   },
   {
-    icon: <Call />,
+    icon: <Call sx={iconStyle} />,
     text: "Kontakt",
   },
 ];
@@ -60,27 +70,32 @@ export default function Navbar() {
   const handleMenuToggle = () => setOpen((prevState) => !prevState);
 
   const drawer = (
-    <Box onClick={handleMenuToggle}>
-      <Typography
-        variant="h3"
-        component="h3"
-        sx={{ my: 2, fontStyle: "italic", textAlign: "center" }}
-      >
-        NA FALI
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((navItem, index) => (
-          <Link to={navItem.text} spy={true} key={index}>
-            <ListItem disablePadding>
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={navItem.text} />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-    </Box>
+    <List
+      sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-around",
+        alignItems: "center",
+      }}
+    >
+      {navItems.map((navItem, index) => (
+        <Link to={navItem.text} spy={true} key={index}>
+          <ListItem disablePadding>
+            <ListItemButton
+              sx={{
+                p: 2,
+              }}
+            >
+              <ListItemIcon>{navItem.icon}</ListItemIcon>
+              <ListItemText>
+                <Typography sx={textStyle}>{navItem.text}</Typography>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+        </Link>
+      ))}
+    </List>
   );
 
   return (
@@ -98,19 +113,17 @@ export default function Navbar() {
       >
         <Toolbar>
           <IconButton
-            color="inherit"
             aria-label="open drawer"
+            color="inherit"
             edge="start"
             onClick={handleMenuToggle}
-            size="large"
           >
-            <Menu />
+            <Menu sx={{ ...iconStyle, ml: { xs: 0, sm: 1, lg: 2 } }} />
           </IconButton>
         </Toolbar>
       </AppBar>
       <Box component="nav">
         <Drawer
-          variant="temporary"
           open={open}
           onClose={handleMenuToggle}
           ModalProps={{
@@ -119,16 +132,43 @@ export default function Navbar() {
           sx={{
             display: "block",
             "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-              backgroundColor: "rgba(255, 255, 255, 0.3)",
-              backdropFilter: "blur(4px)",
-              WebkitBackdropFilter: "blur(4px)",
-              borderRadius: "10px",
-              border: "1px solid rgba(255, 255, 255, 0.18)",
+              backdropFilter: "blur(8px)",
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
+              border: "1px solid rgba(255, 255, 255, 0.28)",
+              borderRadius: "1rem",
+              WebkitBackdropFilter: "blur(8px)",
+              width: { xs: "60vw", md: "30vw" },
             },
           }}
         >
+          <ChevronLeft
+            sx={{
+              ...iconStyle,
+              position: "absolute",
+              left: 5,
+              top: 15,
+              cursor: "pointer",
+            }}
+            onClick={handleMenuToggle}
+          />
+          <Typography
+            component="h3"
+            sx={{
+              fontSize: "3rem",
+              fontStyle: "italic",
+              fontWeight: 700,
+              py: 2,
+              textAlign: "center",
+              textTransform: "uppercase",
+              background: "-webkit-linear-gradient(darkblue, lightblue)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            aquapark "na fali"
+          </Typography>
+          <Divider />
           {drawer}
         </Drawer>
       </Box>

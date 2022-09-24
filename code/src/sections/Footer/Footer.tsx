@@ -25,7 +25,7 @@ export default function Footer() {
               fontSize: "2rem",
             }}
           >
-            E-mail: kubapawlak1051@wp.pl <br />
+            E-mail: na@fali.com <br />
             Telefon: 000-111-222
           </Typography>
         </div>
@@ -59,6 +59,8 @@ export default function Footer() {
             color: "#888",
             fontSize: "2.5rem",
             fontWeight: 500,
+            textAlign: "center",
+            my: "auto",
           }}
         >
           Jakub Pawlak 2022 &copy; Wszelkie prawa zastrzeżone

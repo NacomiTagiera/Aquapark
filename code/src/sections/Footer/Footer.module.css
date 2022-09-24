@@ -22,10 +22,3 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
-
-.copyright {
-  height: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
