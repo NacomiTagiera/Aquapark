@@ -3,7 +3,7 @@ import Wave from "react-wavify";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
 import styles from "./HomeSection.module.css";
-import palma from "../../img/palma.png";
+import palma from "../../assets/palm.png";
 
 export default function HomeSection() {
   return (

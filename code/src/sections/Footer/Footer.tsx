@@ -3,20 +3,18 @@ import { Typography } from "@mui/material";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const commonStyles = {
+    fontSize: "4rem",
+    fontWeight: 900,
+    color: "#a79a2d",
+    textTransform: "uppercase",
+  };
+
   return (
     <footer className={styles.footer} id="Kontakt">
       <div className={styles.contact}>
         <div className={styles.phone}>
-          <Typography
-            variant="h5"
-            component="h6"
-            sx={{
-              fontSize: "4rem",
-              fontWeight: 900,
-              color: "#a79a2d",
-              textTransform: "uppercase",
-            }}
-          >
+          <Typography variant="h5" component="h6" sx={commonStyles}>
             Kontakt
           </Typography>
           <Typography
@@ -30,16 +28,7 @@ export default function Footer() {
           </Typography>
         </div>
         <div className={styles.address}>
-          <Typography
-            variant="h5"
-            component="h6"
-            sx={{
-              fontSize: "4rem",
-              fontWeight: 900,
-              color: "#a79a2d",
-              textTransform: "uppercase",
-            }}
-          >
+          <Typography variant="h5" component="h6" sx={commonStyles}>
             Na fali
           </Typography>
           <Typography

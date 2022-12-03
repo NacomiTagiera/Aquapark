@@ -4,22 +4,22 @@ import { Props } from "../../components/GalleryItem/GalleryItem";
 
 import styles from "./Gallery.module.css";
 
-import basen from "../../img/basen.jpg";
-import impreza from "../../img/impreza.jpg";
-import jacuzzi from "../../img/jacuzzi.jpg";
-import jedzenie from "../../img/jedzenie.jpg";
-import sauna from "../../img/sauna.jpg";
-import zjeżdżalnie from "../../img/zjeżdżalnie.jpg";
+import jacuzzi from "../../assets/jacuzzi.jpg";
+import party from "../../assets/party.jpg";
+import pool from "../../assets/pool.jpg";
+import restaurant from "../../assets/restaurant.jpg";
+import sauna from "../../assets/sauna.jpg";
+import waterSlide from "../../assets/waterslide.jpg";
 
 const imagesData: Props[] = [
   {
-    source: basen,
+    source: pool,
     title: "Baseny",
     description:
       "Na terenie aquaparku znajduje się 30 basenów - 15 wewnętrznych oraz 15 zewnętrznych, w tym baseny płytkie dla dzieci, basen sportowy o długości 50 metrów.",
   },
   {
-    source: impreza,
+    source: party,
     title: "Imprezy",
     description:
       "Organizujemy od wielu lat urodziny, wieczory kawalerskie i panieńskie. Zagwarantujemy wam dobrą zabawę, smaczne jedzenie i orzeżwiające napoje oraz bezpieczeństwo.",
@@ -31,7 +31,7 @@ const imagesData: Props[] = [
       "Wytwarzane w wodzie bąbelki przyspieszają cyrkulację krwi w naszej skórze, co prowadzi do stymulacji usuwania toksyn z organizmu.",
   },
   {
-    source: jedzenie,
+    source: restaurant,
     title: "Restauracje",
     description:
       "Kebab, frytki, lody, dania obiadowe - to wszystko znajdziecie u nas w strefie restauracyjnej. Prosimy o niewchodzenie z jedzeniem do wody!",
@@ -43,7 +43,7 @@ const imagesData: Props[] = [
       "W strefie relaksu czeka na was sauna sucha, mokra, parowa i kamienna oraz masaże. Profesjonalni masażyści zadbają o to, abyście się czuli zrelaksowani i odstresowani.",
   },
   {
-    source: zjeżdżalnie,
+    source: waterSlide,
     title: "Zjeżdżalnie",
     description:
       "W naszym aquaparku jest aż 40 zjeżdżalni wodnych, w tym 3 zjeżdżalnie obrotowe, o łącznej długości ponad 1000 (tysiąc) metrów! Na pewno każdy znajdzie coś dla siebie.",

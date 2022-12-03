@@ -25,15 +25,14 @@ import {
   PhotoCamera,
 } from "@mui/icons-material";
 
-const textStyle = {
-  color: "#fff",
-  fontSize: "3.5rem",
-  fontWeight: "bold",
-};
-
 const iconStyle = {
   color: "#fff",
   fontSize: "3.5rem",
+};
+
+const textStyle = {
+  ...iconStyle,
+  fontWeight: "bold",
 };
 
 interface NavItem {
@@ -118,7 +117,13 @@ export default function Navbar() {
             edge="start"
             onClick={handleMenuToggle}
           >
-            <Menu sx={{ ...iconStyle, ml: { xs: 0, sm: 1, lg: 2 } }} />
+            <Menu
+              sx={{
+                ...iconStyle,
+                ml: { xs: 0, sm: 1, lg: 2 },
+                color: "#0066bb",
+              }}
+            />
           </IconButton>
         </Toolbar>
       </AppBar>
