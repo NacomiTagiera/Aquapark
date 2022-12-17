@@ -1,12 +1,11 @@
 import { Typography } from "@mui/material";
-
 import styles from "./Footer.module.css";
 
 export default function Footer() {
   const commonStyles = {
+    color: "#a79a2d",
     fontSize: "4rem",
     fontWeight: 900,
-    color: "#a79a2d",
     textTransform: "uppercase",
   };
 
@@ -48,8 +47,8 @@ export default function Footer() {
             color: "#888",
             fontSize: "2.5rem",
             fontWeight: 500,
-            textAlign: "center",
             my: "auto",
+            textAlign: "center",
           }}
         >
           Jakub Pawlak 2022 &copy; Wszelkie prawa zastrzeżone

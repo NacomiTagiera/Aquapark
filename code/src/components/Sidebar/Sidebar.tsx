@@ -43,7 +43,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   {
     icon: <Home sx={iconStyle} />,
-    text: "Home",
+    text: "Start",
   },
   {
     icon: <HotTub sx={iconStyle} />,

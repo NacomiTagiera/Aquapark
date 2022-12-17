@@ -1,7 +1,5 @@
-import GalleryItem from "../../components/GalleryItem/GalleryItem";
+import GalleryItem, { Props } from "../../components/GalleryItem/GalleryItem";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
-import { Props } from "../../components/GalleryItem/GalleryItem";
-
 import styles from "./Gallery.module.css";
 
 import jacuzzi from "../../assets/jacuzzi.jpg";
@@ -58,10 +56,10 @@ export default function Gallery() {
       <div className={styles.gallery}>
         {imagesData.map((imageData) => (
           <GalleryItem
-            source={imageData.source}
-            title={imageData.title}
             description={imageData.description}
             key={imageData.title}
+            source={imageData.source}
+            title={imageData.title}
           />
         ))}
       </div>

@@ -7,7 +7,7 @@ import palma from "../../assets/palm.png";
 
 export default function HomeSection() {
   return (
-    <section className={styles.homeSection} id="Home">
+    <section className={styles.homeSection} id="Start">
       <SectionHeading headerText='Aquapark "Na Fali"' />
       <img src={palma} alt="Palma" />
       <Wave

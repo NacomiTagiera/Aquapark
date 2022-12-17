@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-
+import { motion } from "framer-motion";
 import styles from "./SectionHeading.module.css";
 
 interface Props {
@@ -8,22 +8,28 @@ interface Props {
 
 export default function SectionHeading({ headerText }: Props) {
   return (
-    <Typography
-      variant="h1"
-      component="h2"
-      className={styles.sectionHeading}
-      sx={{
-        fontSize: "12rem",
-        fontWeight: 900,
-        fontFamily: "Nunito",
-        color: "#fff",
-        textAlign: "center",
-        textTransform: "capitalize",
-        letterSpacing: "0.5rem",
-        textShadow: "0.3rem 0.3rem 0.3rem #000",
-      }}
+    <motion.div
+      initial={{ opacity: 0, y: 300 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
+      viewport={{ once: true }}
     >
-      {headerText}
-    </Typography>
+      <Typography
+        variant="h1"
+        className={styles.sectionHeading}
+        sx={{
+          color: "#fff",
+          fontFamily: "Nunito",
+          fontSize: "12rem",
+          fontWeight: 900,
+          letterSpacing: "0.5rem",
+          textAlign: "center",
+          textShadow: "0.3rem 0.3rem 0.3rem #000",
+          textTransform: "capitalize",
+        }}
+      >
+        {headerText}
+      </Typography>
+    </motion.div>
   );
 }

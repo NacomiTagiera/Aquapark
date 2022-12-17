@@ -1,11 +1,12 @@
 # Aquapark
 
-Responsive website of an imaginary aquapark with multiple CSS hover animations, MUI components and wave animation.
-Technologies and libraries that I used in this project:
+Responsive website of an imaginary aquapark with multiple animations and MUI components. I did this project to practice Material UI and Framer Motion.
+Technologies and libraries that I used:
 
 - TypeScript,
 - React.js,
-- Material UI,
 - CSS,
+- Material UI,
+- Framer Motion,
 - React Scroll,
-- React Wavify,
+- React Wavify.

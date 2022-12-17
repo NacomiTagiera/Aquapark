@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import {
   Accordion,
   AccordionDetails,
@@ -7,7 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import { ExpandMore, ChatBubbleOutline } from "@mui/icons-material";
-
+import { motion } from "framer-motion";
 import styles from "./FAQItem.module.css";
 
 export interface Props {
@@ -24,34 +23,40 @@ export default function FAQItem({ question, answer }: Props) {
 
   return (
     <Accordion
+      className={styles.faq}
       expanded={isExpanded}
       onClick={handleToggleIsExpanded}
       sx={{
         backgroundColor: "lightblue",
-        border: ".1rem solid #9fa4a8",
+        border: "0.1rem solid #9fa4a8",
         borderRadius: "1rem",
         my: "2rem",
+        overflow: "hidden",
         p: "3rem",
         position: "relative",
-        overflow: "hidden",
-        transition: ".3s ease",
-        width: "50%",
+        transition: "0.3s ease-out",
       }}
-      className={styles.faq}
     >
       <AccordionSummary expandIcon={<ExpandMore sx={{ fontSize: "5rem" }} />}>
-        <Typography sx={{ mr: "3.5rem", fontSize: "3rem", fontWeight: 700 }}>
-          {question}
-        </Typography>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <Typography sx={{ fontSize: "3rem", fontWeight: 700, mr: "3.5rem" }}>
+            {question}
+          </Typography>
+        </motion.div>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography sx={{ mt: "2rem", fontSize: "2rem" }}>{answer}</Typography>
+        <Typography sx={{ fontSize: "2rem", mt: "2rem" }}>{answer}</Typography>
         <ChatBubbleOutline
           sx={{
             color: "#2ecc71",
             fontSize: "7rem",
-            position: "absolute",
             opacity: 0.2,
+            position: "absolute",
             top: "2rem",
             left: "2rem",
             zIndex: 1,
@@ -61,10 +66,10 @@ export default function FAQItem({ question, answer }: Props) {
           sx={{
             color: "#3498db",
             fontSize: "7rem",
-            position: "absolute",
             opacity: 0.2,
+            position: "absolute",
             top: "-1rem",
-            left: "3-rem",
+            left: "3rem",
           }}
         />
       </AccordionDetails>

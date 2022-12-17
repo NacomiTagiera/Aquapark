@@ -3,6 +3,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -12,8 +13,8 @@ html {
 }
 
 body {
+  font-family: "Nunito", sans-serif;
   margin: 0;
-  outline: 0;
   overflow-x: hidden;
   padding: 0;
 }

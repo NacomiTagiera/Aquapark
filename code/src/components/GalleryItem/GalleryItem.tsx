@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-
+import { motion } from "framer-motion";
 import styles from "./GalleryItem.module.css";
 
 export interface Props {
@@ -10,8 +10,14 @@ export interface Props {
 
 export default function GalleryItem({ source, title, description }: Props) {
   return (
-    <div className={styles.galleryItem}>
-      <img src={source} alt="" className={styles.galleryImg} />
+    <motion.div
+      className={styles.galleryItem}
+      initial={{ x: 300, y: 300 }}
+      whileInView={{ x: 0, y: 0 }}
+      transition={{ type: "spring", duration: 0.7 }}
+      viewport={{ once: true }}
+    >
+      <img src={source} alt={title} className={styles.galleryImg} />
       <Typography
         variant="h3"
         component="h3"
@@ -20,14 +26,14 @@ export default function GalleryItem({ source, title, description }: Props) {
           position: "absolute",
           top: "3rem",
           left: "3rem",
+          color: "white",
           fontSize: "2rem",
           fontWeight: 700,
-          textTransform: "uppercase",
-          letterSpacing: ".1rem",
-          color: "white",
-          width: 0,
+          letterSpacing: "0.1rem",
           overflow: "hidden",
-          transition: "width .3s",
+          textTransform: "uppercase",
+          width: 0,
+          transition: "width 0.3s",
         }}
       >
         {title}
@@ -38,19 +44,19 @@ export default function GalleryItem({ source, title, description }: Props) {
           position: "absolute",
           top: "34%",
           left: "2rem",
-          width: "70%",
+          color: "white",
           fontSize: "1.5rem",
           fontWeight: 300,
-          letterSpacing: ".1rem",
-          textTransform: "uppercase",
-          color: "white",
+          letterSpacing: "0.1rem",
           opacity: 0,
+          textTransform: "uppercase",
           visibility: "hidden",
-          transition: "opacity .3s",
+          width: "70%",
+          transition: "opacity 0.3s",
         }}
       >
         {description}
       </Typography>
-    </div>
+    </motion.div>
   );
 }

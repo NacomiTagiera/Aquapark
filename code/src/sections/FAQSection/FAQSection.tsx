@@ -1,8 +1,7 @@
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
-import FAQItem from "../../components/FAQItem/FAQItem";
-import { Props } from "../../components/FAQItem/FAQItem";
-
+import FAQItem, { Props } from "../../components/FAQItem/FAQItem";
 import styles from "./FAQSection.module.css";
+import { motion } from "framer-motion";
 
 const faqsData: Props[] = [
   {
