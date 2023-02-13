@@ -1,4 +1,4 @@
-.cardsSection {
+.cards-section {
   background: radial-gradient(
     circle,
     rgba(0, 166, 187, 1) 20%,
@@ -12,24 +12,24 @@
   justify-content: space-between;
 }
 
-.cardsContainer {
+.cards-container {
   display: flex;
   justify-content: space-evenly;
 }
 
 @media (max-width: 1400px) {
-  .cardsSection {
+  .cards-section {
     height: auto;
     padding: 10rem 0 12rem 0;
   }
 
-  .cardsContainer {
+  .cards-container {
     margin-top: 10rem;
   }
 }
 
 @media (max-width: 1000px) {
-  .cardsContainer {
+  .cards-container {
     flex-wrap: wrap;
   }
 }

@@ -1,27 +1,28 @@
-import { Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import styles from "./GalleryItem.module.css";
+import { Typography } from "@mui/material";
 
-export interface Props {
-  source: string;
-  title: string;
-  description: string;
-}
+import { GalleryItemProps } from "types/main";
 
-export default function GalleryItem({ source, title, description }: Props) {
+import styles from "./styles.module.css";
+
+export default function GalleryItem({
+  source,
+  title,
+  description,
+}: GalleryItemProps) {
   return (
     <motion.div
-      className={styles.galleryItem}
+      className={styles["gallery-item"]}
       initial={{ x: 300, y: 300 }}
       whileInView={{ x: 0, y: 0 }}
       transition={{ type: "spring", duration: 0.7 }}
       viewport={{ once: true }}
     >
-      <img src={source} alt={title} className={styles.galleryImg} />
+      <img src={source} alt={title} className={styles["gallery-img"]} />
       <Typography
         variant="h3"
         component="h3"
-        className={styles.galleryName}
+        className={styles["gallery-name"]}
         sx={{
           position: "absolute",
           top: "3rem",
@@ -39,7 +40,7 @@ export default function GalleryItem({ source, title, description }: Props) {
         {title}
       </Typography>
       <Typography
-        className={styles.galleryDescription}
+        className={styles["gallery-description"]}
         sx={{
           position: "absolute",
           top: "34%",

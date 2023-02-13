@@ -1,9 +1,11 @@
-import SectionHeading from "../../components/SectionHeading/SectionHeading";
-import FAQItem, { Props } from "../../components/FAQItem/FAQItem";
-import styles from "./FAQSection.module.css";
-import { motion } from "framer-motion";
+import SectionHeading from "components/SectionHeading";
+import FAQItem from "components/FAQItem";
 
-const faqsData: Props[] = [
+import { FaqProps } from "types/main";
+
+import styles from "./styles.module.css";
+
+const faqsData: FaqProps[] = [
   {
     question: "Jakie są godziny otwarcia?",
     answer: "Codziennie od 8 do 24",
@@ -24,8 +26,8 @@ const faqsData: Props[] = [
 
 export default function FAQSection() {
   return (
-    <section className={styles.faqSection} id="FAQ">
-      <SectionHeading headerText="FAQ" />
+    <section className={styles["faq-section"]} id="FAQ">
+      <SectionHeading text="FAQ" />
 
       {faqsData.map((faqData) => (
         <FAQItem

@@ -1,6 +1,6 @@
-import { ReactNode, useState } from "react";
-import { Link } from "react-scroll";
+import { useState } from "react";
 
+import { Link } from "react-scroll";
 import {
   AppBar,
   Box,
@@ -25,6 +25,8 @@ import {
   PhotoCamera,
 } from "@mui/icons-material";
 
+import { NavItemProps } from "types/main";
+
 const iconStyle = {
   color: "#fff",
   fontSize: "3.5rem",
@@ -35,12 +37,7 @@ const textStyle = {
   fontWeight: "bold",
 };
 
-interface NavItem {
-  icon: ReactNode;
-  text: string;
-}
-
-const navItems: NavItem[] = [
+const navItems: NavItemProps[] = [
   {
     icon: <Home sx={iconStyle} />,
     text: "Start",
@@ -63,7 +60,7 @@ const navItems: NavItem[] = [
   },
 ];
 
-export default function Navbar() {
+export default function Sidebar() {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleMenuToggle = () => setOpen((prevState) => !prevState);

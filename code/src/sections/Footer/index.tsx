@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
-import styles from "./Footer.module.css";
+
+import styles from "./styles.module.css";
 
 export default function Footer() {
   const commonStyles = {
@@ -51,7 +52,7 @@ export default function Footer() {
             textAlign: "center",
           }}
         >
-          Jakub Pawlak 2022 &copy; Wszelkie prawa zastrzeżone
+          Jakub Pawlak 2023 &copy; Wszelkie prawa zastrzeżone
         </Typography>
       </div>
     </footer>

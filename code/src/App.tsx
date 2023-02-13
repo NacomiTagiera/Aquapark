@@ -1,16 +1,16 @@
-import CardsSection from "./sections/CardsSection/CardsSection";
-import FAQSection from "./sections/FAQSection/FAQSection";
-import Footer from "./sections/Footer/Footer";
-import Gallery from "./sections/Gallery/Gallery";
-import HomeSection from "./sections/HomeSection/HomeSection";
-import Navbar from "./components/Sidebar/Sidebar";
+import CardsSection from "./sections/Offer";
+import FAQSection from "./sections/FAQ";
+import Footer from "./sections/Footer";
+import Gallery from "./sections/Gallery";
+import HomeSection from "./sections/Home";
+import Sidebar from "./components/Sidebar";
 
 import "./App.css";
 
 export default function App() {
   return (
     <>
-      <Navbar />
+      <Sidebar />
       <HomeSection />
       <CardsSection />
       <Gallery />

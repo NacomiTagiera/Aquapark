@@ -1,15 +1,17 @@
-import GalleryItem, { Props } from "../../components/GalleryItem/GalleryItem";
-import SectionHeading from "../../components/SectionHeading/SectionHeading";
-import styles from "./Gallery.module.css";
+import GalleryItem from "components/GalleryItem";
+import SectionHeading from "components/SectionHeading";
 
-import jacuzzi from "../../assets/jacuzzi.jpg";
-import party from "../../assets/party.jpg";
-import pool from "../../assets/pool.jpg";
-import restaurant from "../../assets/restaurant.jpg";
-import sauna from "../../assets/sauna.jpg";
-import waterSlide from "../../assets/waterslide.jpg";
+import { GalleryItemProps } from "types/main";
 
-const imagesData: Props[] = [
+import jacuzzi from "assets/jacuzzi.jpg";
+import party from "assets/party.jpg";
+import pool from "assets/pool.jpg";
+import restaurant from "assets/restaurant.jpg";
+import sauna from "assets/sauna.jpg";
+import waterSlide from "assets/waterslide.jpg";
+import styles from "./styles.module.css";
+
+const imagesData: GalleryItemProps[] = [
   {
     source: pool,
     title: "Baseny",
@@ -50,8 +52,8 @@ const imagesData: Props[] = [
 
 export default function Gallery() {
   return (
-    <section className={styles.gallerySection} id="Galeria">
-      <SectionHeading headerText="Galeria" />
+    <section className={styles["gallery-section"]} id="Galeria">
+      <SectionHeading text="Galeria" />
 
       <div className={styles.gallery}>
         {imagesData.map((imageData) => (

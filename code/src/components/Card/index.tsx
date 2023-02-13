@@ -1,13 +1,8 @@
-import { ReactNode } from "react";
 import { Paper, Typography } from "@mui/material";
 
-export interface Props {
-  icon: ReactNode;
-  amount: number;
-  name: string;
-}
+import { CardProps } from "types/main"
 
-export default function CardItem({ icon, amount, name }: Props) {
+export default function CardItem({ amount, icon, name }: CardProps) {
   return (
     <Paper
       sx={{

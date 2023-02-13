@@ -1,12 +1,16 @@
-import CardItem, { Props } from "../../components/Card/Card";
-import SectionHeading from "../../components/SectionHeading/SectionHeading";
-import { FoodBank, HotTub, Pool } from "@mui/icons-material";
 import { motion } from "framer-motion";
-import styles from "./CardsSection.module.css";
+import { FoodBank, HotTub, Pool } from "@mui/icons-material";
+
+import CardItem from "components/Card";
+import SectionHeading from "components/SectionHeading";
+
+import { CardProps } from "types/main";
+
+import styles from "./styles.module.css";
 
 const iconStyles = { fontSize: "15rem" };
 
-const cardsData: Props[] = [
+const cardsData: CardProps[] = [
   {
     amount: 30,
     icon: <Pool sx={iconStyles} />,
@@ -26,9 +30,9 @@ const cardsData: Props[] = [
 
 export default function CardsSection() {
   return (
-    <section className={styles.cardsSection} id="Oferta">
-      <SectionHeading headerText="Oferta" />
-      <motion.div className={styles.cardsContainer}>
+    <section className={styles["cards-section"]} id="Oferta">
+      <SectionHeading text="Oferta" />
+      <motion.div className={styles["cards-container"]}>
         {cardsData.map((cardData) => (
           <CardItem
             amount={cardData.amount}

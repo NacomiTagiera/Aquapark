@@ -1,20 +1,19 @@
 import { useState } from "react";
+
+import { motion } from "framer-motion";
+import { ChatBubbleOutline, ExpandMore } from "@mui/icons-material";
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
   Typography,
 } from "@mui/material";
-import { ExpandMore, ChatBubbleOutline } from "@mui/icons-material";
-import { motion } from "framer-motion";
-import styles from "./FAQItem.module.css";
 
-export interface Props {
-  question: string;
-  answer: string;
-}
+import { FaqProps } from "types/main";
 
-export default function FAQItem({ question, answer }: Props) {
+import styles from "./styles.module.css";
+
+export default function FAQItem({ answer, question }: FaqProps) {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const handleToggleIsExpanded = () => {
