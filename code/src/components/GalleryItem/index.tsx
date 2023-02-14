@@ -13,8 +13,8 @@ export default function GalleryItem({
   return (
     <motion.div
       className={styles["gallery-item"]}
-      initial={{ x: 300, y: 300 }}
-      whileInView={{ x: 0, y: 0 }}
+      initial={{ opacity: 0.3, scale: 0.5, y: 50 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ type: "spring", duration: 0.7 }}
       viewport={{ once: true }}
     >
