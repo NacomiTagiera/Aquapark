@@ -11,3 +11,9 @@
     margin: 0 10rem;
   }
 }
+
+@media (max-width: 550px) {
+  .section-heading {
+    font-size: 6rem;
+  }
+}

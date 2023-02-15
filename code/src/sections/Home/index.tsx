@@ -2,14 +2,14 @@ import Wave from "react-wavify";
 
 import SectionHeading from "components/SectionHeading";
 
-import palma from "assets/palm.png";
+import palm from "assets/palm.png";
 import styles from "./styles.module.css";
 
 export default function HomeSection() {
   return (
     <section className={styles.home} id="Start">
-      <SectionHeading text='Aquapark "Na Fali"' />
-      <img src={palma} alt="Palma" />
+      <SectionHeading text="Na Fali" />
+      <img src={palm} alt="Palma" />
       <Wave
         fill="#00d4ff"
         paused={false}
